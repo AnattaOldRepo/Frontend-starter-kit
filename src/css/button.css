@@ -1,0 +1,6 @@
+
+body{
+	display: flex;
+	color: red;
+	background: require('./images/test.jpg')
+}

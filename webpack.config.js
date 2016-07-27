@@ -1,7 +1,13 @@
 var debug = process.env.NODE_ENV !== "production";
-var webpack = require('webpack');
-var autoprefixer = require('autoprefixer');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var postcssUtilities  = require('postcss-utilities');
+var postcssInitial    = require('postcss-initial');
+var postcssImport     = require('postcss-import');
+var postcssShort      = require('postcss-short');
+var autoprefixer      = require('autoprefixer');
+var webpack           = require('webpack');
+var precss            = require('precss');
+
 
 
 module.exports = {
@@ -16,14 +22,30 @@ module.exports = {
 
   module: {
         loaders: [
+
             { 
               test: /\.css$/, 
               loader: ExtractTextPlugin.extract( 'css-loader!postcss-loader' )
+            },
+
+            { 
+
+              test: /\.(woff2?|ttf|eot|svg|png|jpe?g|gif)$/,
+              loader: 'file' 
             }
         ]
   },
 
-  postcss: [ autoprefixer({ browsers: ['last 5 versions'] }) ],
+   postcss: function(webpack) {
+        return [
+            postcssImport({ addDependencyTo: webpack }), // Must be first item in list
+            postcssUtilities,
+            postcssShort,
+            postcssInitial,
+            precss,
+            autoprefixer
+        ];
+    },
 
   plugins: debug ? [
     new ExtractTextPlugin("app.css")
