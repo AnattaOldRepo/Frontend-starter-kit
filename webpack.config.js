@@ -15,7 +15,7 @@ module.exports = {
     entry: "./src/index.js",
 
     output: {
-        path: "./build",
+    			path: "./build",
         filename: "app.js"
     },
 

@@ -1,3 +1,37 @@
-@import "button.css";
+@charset "UTF-8";
+
+/**
+ * Sass code is structured according to ITCSS [1] and BEM [2]. The folders are
+ * numbered to better reflect the underlying principles of ITCSS, e.g. styles in
+ * `base` are unclassed elements (low specificity), styles in `objects` or
+ * `components` are classed selectors occasionally prefixed with BEM modifiers
+ * (higher specificity).
+ *
+ * The aim is to build up the specificity graph [3] the way it should be.
+ *
+ * [1] https://speakerdeck.com/dafed/managing-css-projects-with-itcss
+ * [2] http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/
+ * [3] http://csswizardry.com/2014/10/the-specificity-graph/
+
+*/
 
 
+@import "settings/index";
+
+
+@import "tools/index";
+
+
+@import "generic/index";
+
+
+@import "elements/index";
+
+
+@import "objects/index";
+
+
+@import "components/index";
+
+
+@import "trumps/index";

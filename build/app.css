@@ -1,9 +1,46 @@
-body {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  color: red;
-  background: url(data:image/jpeg;base64,/9j/4QAYRXhpZgAASUkqAAgAAAAAAAAAAAAAAP/sABFEdWNreQABAAQAAAAAAAD/4QMxaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wLwA8P3hwYWNrZXQgYmVnaW49Iu+7vyIgaWQ9Ilc1TTBNcENlaGlIenJlU3pOVGN6a2M5ZCI/PiA8eDp4bXBtZXRhIHhtbG5zOng9ImFkb2JlOm5zOm1ldGEvIiB4OnhtcHRrPSJBZG9iZSBYTVAgQ29yZSA1LjYtYzA2NyA3OS4xNTc3NDcsIDIwMTUvMDMvMzAtMjM6NDA6NDIgICAgICAgICI+IDxyZGY6UkRGIHhtbG5zOnJkZj0iaHR0cDovL3d3dy53My5vcmcvMTk5OS8wMi8yMi1yZGYtc3ludGF4LW5zIyI+IDxyZGY6RGVzY3JpcHRpb24gcmRmOmFib3V0PSIiIHhtbG5zOnhtcD0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wLyIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bXA6Q3JlYXRvclRvb2w9IkFkb2JlIFBob3Rvc2hvcCBDQyAyMDE1IChNYWNpbnRvc2gpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjA0OUZGNTZGNEM1MjExRTZBRkEwOTgyNTM0M0RERjhDIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjA0OUZGNTcwNEM1MjExRTZBRkEwOTgyNTM0M0RERjhDIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6MDQ5RkY1NkQ0QzUyMTFFNkFGQTA5ODI1MzQzRERGOEMiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6MDQ5RkY1NkU0QzUyMTFFNkFGQTA5ODI1MzQzRERGOEMiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz7/7gAhQWRvYmUAZMAAAAABAwAQAwIDBgAABQkAAAV8AAAGiv/bAIQAGxoaKR0pQSYmQUIvLy9CRz8+Pj9HR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHRwEdKSk0JjQ/KCg/Rz81P0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dH/8IAEQgAQABiAwEiAAIRAQMRAf/EAIsAAQEAAwEAAAAAAAAAAAAAAAADAgQFAQEBAQAAAAAAAAAAAAAAAAAAAAIQAAICAQQBBQEAAAAAAAAAAAIDAQQAEDETM0AwUBEhIiQRAAIABQIEBAUFAAAAAAAAAAECABEhMQNBEhBRYZFxsUJyQIHBIoNQ8KEycxIBAAAAAAAAAAAAAAAAAAAAQP/aAAwDAQACEQMRAAAA5gqQAAAAAACwiyGKmZAsRZ4nigmDo6vm4agLxtU5na4+4e6XZ4x0Exog2PdYZsBsW0R7SQvHwAf/2gAIAQIAAQUA8z//2gAIAQMAAQUA8z//2gAIAQEAAQUA9pUhjsbXYnBGSkhkJUo2y2sxUYddgCtZMLOItYAn14cSwq91rufPEpD+LQmRlJcrtFvrKzVC2TaCr3Wu61+wonDWFvdyp/QZb8o6qsksTtSQrOVkw5YSbBKgbxLmZ+ca6W5XsHWKfv1//9oACAECAgY/AGf/2gAIAQMCBj8AZ//aAAgBAQEGPwD9JOwTlc2Hc0gbxIGxuO4pAUXNBBU3FDEkG4xucU50I7ifAZGElaxgKomTwt6d3y58VXFUoWLrqZ2MtaUhsRFG0OhGo6wnvXzEP728zCYlpvXe3Wdu0oII3IwIZf3qOGPC/wDTJhQeDV2mFRrqSP4MGPwcVyCgaciOkOuX7iiFlfUS0nqDCe9fMQ/vbzMY8gts2HxWFxHGhGp21oLwYxf5L9Yx5vWh2v1Ejtb6GDH4tvz4lJB0PpYTE+fSCiKuNTfbr4kzMBxdSD2gubsSe8FRJlN1YTETxqic5A16Gs5dInCzl9ihRLkI3pe1bfAf/9k=);
+@charset "UTF-8";
+
+/**
+ * Sass code is structured according to ITCSS [1] and BEM [2]. The folders are
+ * numbered to better reflect the underlying principles of ITCSS, e.g. styles in
+ * `base` are unclassed elements (low specificity), styles in `objects` or
+ * `components` are classed selectors occasionally prefixed with BEM modifiers
+ * (higher specificity).
+ *
+ * The aim is to build up the specificity graph [3] the way it should be.
+ *
+ * [1] https://speakerdeck.com/dafed/managing-css-projects-with-itcss
+ * [2] http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/
+ * [3] http://csswizardry.com/2014/10/the-specificity-graph/
+
+*/
+
+.index {
+  content: 'Setting';
+}
+
+.index {
+  content: 'Tools';
+}
+
+.index {
+  content: 'Generic';
+}
+
+.index {
+  content: 'Elements';
+}
+
+.index {
+  content: 'Objects';
+}
+
+.index {
+  content: 'Components';
+}
+
+.index {
+  content: 'Trumps';
 }
 
 
