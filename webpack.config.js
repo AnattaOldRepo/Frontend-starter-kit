@@ -10,6 +10,7 @@ var precss            = require('precss');
 
 
 
+
 module.exports = {
 
   devtool: debug ? "inline-sourcemap" : null,
@@ -20,18 +21,23 @@ module.exports = {
     filename: "app.js"
   },
 
+  resolve: {
+    alias: {
+      images: "./src/images"
+    }
+  },
+
   module: {
         loaders: [
 
             { 
               test: /\.css$/, 
-              loader: ExtractTextPlugin.extract( 'css-loader!postcss-loader' )
+              loader: ExtractTextPlugin.extract( 'css-loader!resolve-url!postcss-loader' )
             },
 
-            { 
-
-              test: /\.(woff2?|ttf|eot|svg|png|jpe?g|gif)$/,
-              loader: 'file' 
+            {
+              test: /\.(jpe?g|png|gif|svg)$/,
+              loader: 'url-loader?limit=10000&name=images/[name].[ext]'
             }
         ]
   },

@@ -27,6 +27,7 @@
     "postcss-short": "^1.4.0",
     "postcss-utilities": "^0.2.1",
     "precss": "^1.4.0",
+    "resolve-url-loader": "^1.6.0",
     "style-loader": "^0.13.1",
     "url-loader": "^0.5.7",
     "webpack": "^1.13.1"
