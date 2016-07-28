@@ -1,52 +1,6 @@
-@charset "UTF-8";
-
-/**
- * Sass code is structured according to ITCSS [1] and BEM [2]. The folders are
- * numbered to better reflect the underlying principles of ITCSS, e.g. styles in
- * `base` are unclassed elements (low specificity), styles in `objects` or
- * `components` are classed selectors occasionally prefixed with BEM modifiers
- * (higher specificity).
- *
- * The aim is to build up the specificity graph [3] the way it should be.
- *
- * [1] https://speakerdeck.com/dafed/managing-css-projects-with-itcss
- * [2] http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/
- * [3] http://csswizardry.com/2014/10/the-specificity-graph/
-
-*/
-
-.index {
-  content: 'Setting';
+body{
+	margin-top: 20px;
 }
-
-.index {
-  content: 'Tools';
-}
-
-.index {
-  content: 'Generic';
-}
-
-.index {
-  content: 'Elements';
-}
-
-.index {
-  content: 'Objects';
-}
-
-.index {
-  content: 'Components';
-}
-
-.index {
-  content: 'Trumps';
-}
-
-body {
-  margin-top: 20px;
-}
-
 .btn {
   font-size: 3vmin;
   padding: 0.75em 1.5em;
@@ -57,12 +11,14 @@ body {
   display: inline;
   border-radius: 4px;
   -webkit-transition: background-color 1s ease;
+  -moz-transition: background-color 1s ease;
   transition: background-color 1s ease;
 }
 
 .btn:hover {
   background-color: #ddd;
   -webkit-transition: background-color 1s ease;
+  -moz-transition: background-color 1s ease;
   transition: background-color 1s ease;
 }
 
@@ -70,7 +26,6 @@ body {
   padding: .75em 1em;
   font-size: 0.8em;
 }
-
 .modal-box {
   display: none;
   position: absolute;
@@ -83,11 +38,8 @@ body {
   border: 1px solid rgba(0, 0, 0, 0.1);
   background-clip: padding-box;
 }
-
 @media (min-width: 32em) {
-  .modal-box {
-    width: 70%;
-  }
+.modal-box { width: 70%; }
 }
 
 .modal-box header,
@@ -99,13 +51,9 @@ body {
 .modal-box header h3,
 .modal-box header h4,
 .modal-box .modal-header h3,
-.modal-box .modal-header h4 {
-  margin: 0;
-}
+.modal-box .modal-header h4 { margin: 0; }
 
-.modal-box .modal-body {
-  padding: 2em 1.5em;
-}
+.modal-box .modal-body { padding: 2em 1.5em; }
 
 .modal-box footer,
 .modal-box .modal-footer {
@@ -140,8 +88,6 @@ a.close {
 a.close:hover {
   color: #222;
   -webkit-transition: color 1s ease;
+  -moz-transition: color 1s ease;
   transition: color 1s ease;
 }
-
-
-/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJhcHAuY3NzIiwic291cmNlUm9vdCI6IiJ9*/
