@@ -13,7 +13,6 @@
             if (winWidth < 460) {
                 console.log('your screen resized to ' + winWidth);
             }
-
         }, 250);
     });
 }());
