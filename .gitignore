@@ -6,4 +6,4 @@ node_modules
 /readme.html
 /sitemap.xml
 /sitemap.xml.gz
-
+build/
