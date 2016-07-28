@@ -19,45 +19,28 @@
         <![endif]-->
 
         <!-- Add your site or application content here -->
+<!-- TABS -->
+<div class="container">
+    <ul class="tabs">
+        <li class="tab-link current" data-tab="tab-1">Tab One</li>
+        <li class="tab-link" data-tab="tab-2">Tab Two</li>
+        <li class="tab-link" data-tab="tab-3">Tab Three</li>
+        <li class="tab-link" data-tab="tab-4">Tab Four</li>
+    </ul>
 
-<!-- MODAL---->
-<a class="js-open-modal btn" href="#" data-modal-id="popup2">Open Modal</a>
-
-<div id="popup2" class="modal-box">
-  <header> <a href="#" class="js-modal-close close">×</a>
-    <h3>Modal Popup</h3>
-  </header>
-  <div class="modal-body">
-    <p>Maecenas a ullamcorper ex. Sed sit amet tincidunt turpis. Integer nec quam a neque gravida cursus id sed mauris. Sed sed facilisis tellus. </p>
-  </div>
-  <footer> <a href="#" class="btn btn-small js-modal-close">Close</a> </footer>
-</div>
-
-<!-- FORM Validation -->
-<form name="example_form">
-        <label for="req">Required field:</label>
-        <label for="alphanumeric">Alphanumeric field:</label>
-
-        <input name="req" id="req">
-        <input name="alphanumeric" id="alphanumeric">
-
-        <label for="password">Password:</label>
-        <label for="password_confirm">Password Confirmation (match password):</label>
-
-        <input name="password" id="password" type="password">
-        <input name="password_confirm" id="password_confirm" type="password">
-
-        <label for="email">Email:</label>
-        <label for="minlength">Min length field (min. 8 chars):</label>
-
-        <input name="email" id="email">
-        <input name="minlength" id="minlength">
-
-        <label for="tos_checkbox">Required checkbox (example: Terms of Service)</label>
-        <input name="tos_checkbox" id="tos_checkbox" type="checkbox">
-        <button class="button gray" type="submit" name="submit">Submit</button>
-    </form>
-
+    <div id="tab-1" class="tab-content current">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit
+    </div>
+    <div id="tab-2" class="tab-content">
+         Duis aute irure dolor in reprehenderit in voluptate velit esse.
+    </div>
+    <div id="tab-3" class="tab-content">
+        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
+    </div>
+    <div id="tab-4" class="tab-content">
+        Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+    </div>
+</div><!-- container -->
 
         <script src="build/app.js"></script>
     </body>

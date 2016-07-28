@@ -35,3 +35,24 @@
 
 
 @import "trumps/index";
+
+
+
+/* Tabs CSS */
+
+		ul.tabs li{
+			display: inline-block;
+		}
+
+		ul.tabs li.current{
+			color: green;
+		}
+
+		.tab-content{
+			display: none;
+		}
+
+		.tab-content.current{
+			display: inherit;
+		}
+
