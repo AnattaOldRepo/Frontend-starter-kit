@@ -35,3 +35,21 @@
 
 
 @import "trumps/index";
+
+
+/* Accordion CSS */
+
+#accordion div {
+	display: block;
+	
+}
+#accordion ul{
+	display: none;
+}
+
+#accordion a {
+	text-decoration: none;
+}
+#accordion a:hover {
+	text-decoration: underline;
+}
