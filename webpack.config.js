@@ -1,6 +1,7 @@
 var debug = process.env.NODE_ENV !== "production";
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var postcssUtilities = require('postcss-utilities');
+//var postcssSprites = require('postcss-sprites');
 var postcssInitial = require('postcss-initial');
 var postcssImport = require('postcss-import');
 var postcssShort = require('postcss-short');
@@ -14,17 +15,23 @@ module.exports = {
     entry: "./src/index.js",
 
     output: {
-    	path: "./build",
+        path: "./build",
         filename: "app.js"
     },
 
     module: {
 
         preLoaders: [
+
             {
                 test: /\.js$/, // include .js files
                 exclude: /node_modules/, // exclude any and all files in the node_modules folder
                 loader: "jshint-loader"
+            },
+
+            {
+                test: /\.s(a|c)ss$/,
+                loader: 'stylelint'
             }
         ],
 
@@ -38,9 +45,18 @@ module.exports = {
             {
                 test: /\.(jpe?g|png|gif|svg)$/,
                 loader: 'url-loader?limit=10000&name=images/[name].[ext]'
+            },
+
+            {
+                test: /\.(woff|woff2|eot|ttf)$/,
+                loader: 'file-loader?limit=10000&name=fonts/[name].[ext]'
             }
         ]
 
+    },
+
+    stylelint: {
+        configFile: "./.stylelint.config.js",
     },
 
     postcss: function(webpack) {
