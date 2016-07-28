@@ -35,3 +35,6 @@
 
 
 @import "trumps/index";
+
+
+#myList li{ display:none;}
