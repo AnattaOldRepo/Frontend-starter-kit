@@ -10,19 +10,12 @@ var precss = require('precss');
 
 
 module.exports = {
-
     devtool: debug ? "inline-sourcemap" : null,
     entry: "./src/index.js",
 
     output: {
-    			path: "./build",
+    	path: "./build",
         filename: "app.js"
-    },
-
-    resolve: {
-        alias: {
-            images: "./src/images"
-        }
     },
 
     module: {
