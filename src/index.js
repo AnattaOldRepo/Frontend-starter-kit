@@ -1,2 +1,2 @@
-require('./js/modal/index.js');
+require('./js/dropdown/index.js');
 require("./css/index.css");

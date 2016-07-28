@@ -35,3 +35,30 @@
 
 
 @import "trumps/index";
+
+/* Custom CSS for DropDown */
+.select-wrapper{
+		float: left;
+		display: inline-block;
+	}
+	.select-wrapper, .select-wrapper select{
+		width: 400px;
+		border:1px solid blue;
+		line-height: 26px;
+	}
+
+
+	.select-wrapper select{
+		margin: 0;
+		position: absolute;
+		z-index: 2;            
+		cursor: pointer;
+		outline: none;
+		opacity: 0;
+		/* CSS hacks for older browsers */
+		_noFocusLine: expression(this.hideFocus=true); 
+		-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+		filter: alpha(opacity=0);
+		-khtml-opacity: 0;
+		-moz-opacity: 0;
+	}
