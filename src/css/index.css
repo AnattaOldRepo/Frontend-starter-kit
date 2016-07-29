@@ -35,3 +35,8 @@
 
 
 @import "trumps/index";
+
+.section {
+	min-height: 300px;
+	border-top: 1px solid #ddd;
+}

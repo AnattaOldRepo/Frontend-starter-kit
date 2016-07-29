@@ -14,46 +14,34 @@
 
     </head>
     <body>
-        <!--[if lt IE 8]>
-            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
+    <!--[if lt IE 8]>
+        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
 
-        <!-- Add your site or application content here -->
+    <!-- Add your site or application content here -->
+    
+    <nav>
+        <ul>
+            <li><a href="#section1">Section 1</a></li>
+            <li><a href="#section2">Section 2</a></li>
+            <li><a href="#section3">Section 3</a></li>
+        </ul>
+    </nav>
 
-<!-- MODAL---->
-<a href="#" data-modal-id="modal">Open Modal</a>
+    <div class="section" id="section1">
+        <h2>Section 1</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit laborum voluptas quisquam ea, alias porro beatae, obcaecati, deleniti, libero ipsa quas quos sint. Odio natus molestiae, alias aperiam eveniet sapiente!</p>
+    </div>
+    <div class="section" id="section2">
+        <h2>Section 2</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos omnis qui culpa eligendi aliquid quae repellendus neque consectetur quos aperiam ratione natus eius non, illum alias, quaerat, incidunt enim perferendis!</p>   
+    </div>
+    <div class="section" id="section3">
+        <h3>Section 3</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt eos accusantium distinctio adipisci esse voluptate reprehenderit, cumque alias cum, ab eveniet unde eum nostrum ullam obcaecati, similique, ipsam tempora rerum.</p>
+    </div>
+    
 
-<div id="modal" class="js-modal" style="display: none;">
-  <a href="#" class="js-modalClose">×</a>
-  <h1>Hello I am Modal!</h1>
-</div>
-
-<!-- FORM Validation -->
-<form name="example_form">
-        <label for="req">Required field:</label>
-        <label for="alphanumeric">Alphanumeric field:</label>
-
-        <input name="req" id="req">
-        <input name="alphanumeric" id="alphanumeric">
-
-        <label for="password">Password:</label>
-        <label for="password_confirm">Password Confirmation (match password):</label>
-
-        <input name="password" id="password" type="password">
-        <input name="password_confirm" id="password_confirm" type="password">
-
-        <label for="email">Email:</label>
-        <label for="minlength">Min length field (min. 8 chars):</label>
-
-        <input name="email" id="email">
-        <input name="minlength" id="minlength">
-
-        <label for="tos_checkbox">Required checkbox (example: Terms of Service)</label>
-        <input name="tos_checkbox" id="tos_checkbox" type="checkbox">
-        <button class="button gray" type="submit" name="submit">Submit</button>
-    </form>
-
-
-        <script src="build/app.js"></script>
+    <script src="build/app.js"></script>
     </body>
 </html>
