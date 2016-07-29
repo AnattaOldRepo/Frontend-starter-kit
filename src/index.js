@@ -1,2 +1,2 @@
-require('./js/modal/index.js');
+require('./js/tooltip/index.js');
 require("./css/index.css");

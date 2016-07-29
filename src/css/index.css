@@ -35,3 +35,17 @@
 
 
 @import "trumps/index";
+
+
+.tooltip {
+  display:none;
+  position:absolute;
+  border-radius:5px;
+  box-shadow:2px 2px 3px rgba(0,0,0,.2);
+  background-color:#CCC;
+  border:1px solid #F7F7F7;
+  text-shadow:-1px -1px 0 #F4F4F4;
+  color:#666;
+  font:bold italic 16px Tahoma, Geneva, sans-serif;
+  padding:10px;
+}
