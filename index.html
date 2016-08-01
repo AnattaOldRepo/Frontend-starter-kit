@@ -20,7 +20,7 @@
 
         <!-- Add your site or application content here -->
 
- <form method="get" target="_blank">
+    <form method="get" target="_blank" id="tags-form">
       <p><input name="title" type="text"></p>
       <p><textarea name="content"></textarea></p>
       <p><input name="tags" type="text" value="foo, bar" placeholder="foo, bar, baz"></p>
@@ -30,18 +30,5 @@
 
 
         <script src="build/app.js"></script>
-        <script>
-            var form = document.querySelector('form');
-    console.log(form);
-    var foo = new Tags(form.tags, {
-        join: ', ',
-        values: true, // is equal to `foo.input.value.split(foo.config.join)`
-        update: function(tags) {
-            console.log(tags); // check the added tags on every update event
-        }
-    });
-    console.log(foo);
-    foo.beautify();
-        </script>
     </body>
 </html>
