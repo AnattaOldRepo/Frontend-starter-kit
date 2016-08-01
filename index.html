@@ -20,40 +20,28 @@
 
         <!-- Add your site or application content here -->
 
-<!-- MODAL---->
-<a href="#" data-modal-id="modal">Open Modal</a>
-
-<div id="modal" class="js-modal" style="display: none;">
-  <a href="#" class="js-modalClose">×</a>
-  <h1>Hello I am Modal!</h1>
-</div>
-
-<!-- FORM Validation -->
-<form name="example_form">
-        <label for="req">Required field:</label>
-        <label for="alphanumeric">Alphanumeric field:</label>
-
-        <input name="req" id="req">
-        <input name="alphanumeric" id="alphanumeric">
-
-        <label for="password">Password:</label>
-        <label for="password_confirm">Password Confirmation (match password):</label>
-
-        <input name="password" id="password" type="password">
-        <input name="password_confirm" id="password_confirm" type="password">
-
-        <label for="email">Email:</label>
-        <label for="minlength">Min length field (min. 8 chars):</label>
-
-        <input name="email" id="email">
-        <input name="minlength" id="minlength">
-
-        <label for="tos_checkbox">Required checkbox (example: Terms of Service)</label>
-        <input name="tos_checkbox" id="tos_checkbox" type="checkbox">
-        <button class="button gray" type="submit" name="submit">Submit</button>
+ <form method="get" target="_blank">
+      <p><input name="title" type="text"></p>
+      <p><textarea name="content"></textarea></p>
+      <p><input name="tags" type="text" value="foo, bar" placeholder="foo, bar, baz"></p>
+      <p><button type="submit">Submit</button></p>
     </form>
 
 
+
         <script src="build/app.js"></script>
+        <script>
+            var form = document.querySelector('form');
+    console.log(form);
+    var foo = new Tags(form.tags, {
+        join: ', ',
+        values: true, // is equal to `foo.input.value.split(foo.config.join)`
+        update: function(tags) {
+            console.log(tags); // check the added tags on every update event
+        }
+    });
+    console.log(foo);
+    foo.beautify();
+        </script>
     </body>
 </html>
