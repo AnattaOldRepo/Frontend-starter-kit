@@ -9,9 +9,10 @@
 
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
         <!-- Place favicon.ico in the root directory -->
-
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/select2/4.0.1/css/select2.min.css">
         <link rel="stylesheet" href="build/app.css">
-
+    
     </head>
     <body>
         <!--[if lt IE 8]>
@@ -20,13 +21,12 @@
 
         <!-- Add your site or application content here -->
 
-    <form method="get" target="_blank" id="tags-form">
-      <p><input name="title" type="text"></p>
-      <p><textarea name="content"></textarea></p>
-      <p><input name="tags" type="text" value="foo, bar" placeholder="foo, bar, baz"></p>
-      <p><button type="submit">Submit</button></p>
-    </form>
-
+        <select class="js-select">
+            <option value=""></option>
+            <option value="usd">USD</option>
+            <option value="euro">Euro</option>
+            <option value="gbp">Pound</option>
+        </select>
 
 
         <script src="build/app.js"></script>
