@@ -1,0 +1,16 @@
+@import "../settings/index";
+
+ul {
+
+    list-style: square outside;
+}
+
+li > {
+
+    ul,
+    ol {
+        margin-left: var(--spacing-x);
+        margin-bottom: 0;
+    }
+
+}

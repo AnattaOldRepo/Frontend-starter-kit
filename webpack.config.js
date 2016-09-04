@@ -1,22 +1,28 @@
 var debug = process.env.NODE_ENV !== "production";
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var CommonsChunkPlugin = require("webpack/lib/optimize/CommonsChunkPlugin");
 var postcssUtilities = require('postcss-utilities');
-//var postcssSprites = require('postcss-sprites');
-var postcssInitial = require('postcss-initial');
 var postcssImport = require('postcss-import');
 var postcssShort = require('postcss-short');
 var autoprefixer = require('autoprefixer');
+var easings = require('postcss-easings');
+var cssnext = require('postcss-cssnext');
+var stylelint = require("stylelint");
 var webpack = require('webpack');
 var precss = require('precss');
+var lost = require('lost');
+
 
 
 module.exports = {
     devtool: debug ? "inline-sourcemap" : null,
-    entry: "./src/index.js",
-
+     entry: {
+        home: "./src/home",
+    },
     output: {
         path: "./build",
-        filename: "app.js"
+        filename: "[name].js",
+        chunkFilename: "[id].chunk.js"
     },
 
     module: {
@@ -24,14 +30,9 @@ module.exports = {
         preLoaders: [
 
             {
-                test: /\.js$/, // include .js files
-                exclude: /node_modules/, // exclude any and all files in the node_modules folder
+                test: /\.js$/,
+                exclude: /node_modules/,
                 loader: "jshint-loader"
-            },
-
-            {
-                test: /\.s(a|c)ss$/,
-                loader: 'stylelint'
             }
         ],
 
@@ -39,41 +40,59 @@ module.exports = {
 
             {
                 test: /\.css$/,
-                loader: ExtractTextPlugin.extract('css-loader!resolve-url!postcss-loader')
+                loader: ExtractTextPlugin.extract('css-loader?sourceMap!resolve-url!postcss-loader'),
+                exclude: /node_modules/
             },
 
             {
                 test: /\.(jpe?g|png|gif|svg)$/,
-                loader: 'url-loader?limit=10000&name=images/[name].[ext]'
+                loader: 'url-loader?limit=10000&name=images/[name].[ext]',
+                exclude: /node_modules/
             },
 
             {
                 test: /\.(woff|woff2|eot|ttf)$/,
-                loader: 'file-loader?limit=10000&name=fonts/[name].[ext]'
+                loader: 'file-loader?limit=10000&name=fonts/[name].[ext]',
+                exclude: /node_modules/
             }
         ]
 
     },
 
-    stylelint: {
-        configFile: "./.stylelint.config.js",
-    },
-
     postcss: function(webpack) {
         return [
             postcssImport({
-                addDependencyTo: webpack
-            }), // Must be first item in list
+                addDependencyTo: webpack,
+                plugins: [
+                    stylelint({
+                        rules: {
+                            "font-family-name-quotes": "always-where-required",
+                            "function-url-quotes": "always",
+                            "selector-attribute-quotes": "always",
+                            "custom-media-pattern": ".+",
+                            "selector-max-specificity": "0,2,0",
+                            "unit-whitelist": ["em", "rem", "%", "px", "ms"],
+                            "indentation": [ 4, {
+                                "message": "Please use 4 spaces for indentation.",
+                                "severity": "warning"
+                              } ]
+                        },
+                    })
+                  ]
+            }),
+            cssnext,
             postcssUtilities,
             postcssShort,
-            postcssInitial,
+            easings,
             precss,
-            autoprefixer
+            lost,
+            //autoprefixer, //Commenting out because CSSNext already has autoprefixer.
         ];
     },
 
     plugins: debug ? [
-        new ExtractTextPlugin("app.css")
+        new webpack.optimize.CommonsChunkPlugin("commons", "commons.js"),
+        new ExtractTextPlugin("[name].css")
     ] : [
         new webpack.optimize.DedupePlugin(),
         new webpack.optimize.OccurenceOrderPlugin(),

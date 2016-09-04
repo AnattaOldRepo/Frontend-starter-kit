@@ -4,7 +4,8 @@
   "description": "UI starter kit for Anattadesign",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack -w"
+    "dev": "webpack -w",
+    "prod": "webpack -p --define process.env.NODE_ENV='\"production\"' --progress --colors"
   },
   "repository": {
     "type": "git",
@@ -25,18 +26,20 @@
     "jquery": "^3.1.0",
     "jshint": "^2.9.2",
     "jshint-loader": "^0.8.3",
+    "lost": "^7.1.0",
     "node-sass": "^3.8.0",
+    "postcss-cssnext": "^2.7.0",
+    "postcss-easings": "^0.3.0",
     "postcss-import": "^8.1.2",
     "postcss-initial": "^1.5.2",
     "postcss-loader": "^0.9.1",
     "postcss-short": "^1.4.0",
-    "postcss-sprites": "^3.3.0",
     "postcss-utilities": "^0.2.1",
     "precss": "^1.4.0",
     "resolve-url-loader": "^1.6.0",
     "sass-loader": "^4.0.0",
     "style-loader": "^0.13.1",
-    "stylelint": "^7.0.3",
+    "stylelint": "^7.2.0",
     "stylelint-config-suitcss": "^8.0.0",
     "stylelint-loader": "^6.0.0",
     "url-loader": "^0.5.7",

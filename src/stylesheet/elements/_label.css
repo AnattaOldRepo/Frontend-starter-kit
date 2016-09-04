@@ -1,0 +1,8 @@
+@import "../settings/index";
+
+label{
+    color: var(--black);
+    font-size: var(--font-size-base);
+    margin-bottom: calc(var(--spacing-base) / 2);
+    display: inline-block;
+}

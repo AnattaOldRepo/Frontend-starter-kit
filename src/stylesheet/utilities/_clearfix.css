@@ -1,0 +1,8 @@
+/* Importing from postcss-utilities. https://ismamz.github.io/postcss-utilities/docs; */
+
+/* The clearfix hack is a popular way to contain floats without resorting to using presentational markup. */
+
+.u-clearFix {
+
+    @util clearfix;
+}

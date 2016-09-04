@@ -1,0 +1,64 @@
+/* Importing base settings */
+@import "../settings/index";
+
+/* Component specific settings  */
+:root{
+
+    /* Default skin  */
+    --alert-font-type: "Arial";
+    --alert-font-size: var(--font-size-base);
+    --alert-color: var(--black);
+    --alert-background: var(--gray);
+    --alert-border-radius: 5px;
+    --alert-border-color: color(var(--alert-background) b(50%));
+    --alert-padding: var(--spacing-base);
+    --alert-margin: var(--spacing-base) *;
+
+    /* Error skin  */
+    --alert-error-background: #f2dede;
+    --alert-error-color: #a94442;
+    --alert-error-border-color: #ebcccc;
+
+     /* Success skin  */
+    --alert-success-background: #dff0d8;
+    --alert-success-color: #3c763d;
+    --alert-success-border-color: #d0e9c6;
+
+
+
+}
+
+
+/* Component base styles */
+.c-alert{
+
+    padding: var(--alert-padding);
+    margin: var(--alert-margin);
+
+    border: 1px solid var(--alert-border-color);
+    border-radius: var(--alert-border-radius);
+
+    font-size: var(--alert-font-size);
+    font-family: var(--alert-font-type);
+    line-height: var(--line-height-base);
+
+    color: var(--alert-color) var(--alert-background);
+
+    vertical-align: middle;
+    text-align: center;
+
+    display: block;
+}
+
+
+    .c-alert--error{
+        color: var(--alert-error-color) var(--alert-error-background);
+        border: 1px solid var(--alert-error-border-color);
+    }
+
+
+    .c-alert--success{
+        color: var(--alert-success-color) var(--alert-success-background);
+        border: 1px solid var(--alert-success-border-color);
+    }
+
