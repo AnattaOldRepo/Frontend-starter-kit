@@ -12,12 +12,10 @@ var webpack = require('webpack');
 var precss = require('precss');
 var lost = require('lost');
 
-
-
 module.exports = {
     devtool: debug ? "inline-sourcemap" : null,
      entry: {
-        home: "./src/home",
+        app: "./src/app",
     },
     output: {
         path: "./build",
@@ -85,14 +83,12 @@ module.exports = {
             postcssShort,
             easings,
             precss,
-            lost,
-            //autoprefixer, //Commenting out because CSSNext already has autoprefixer.
+            lost
         ];
     },
 
     plugins: debug ? [
-        new webpack.optimize.CommonsChunkPlugin("commons", "commons.js"),
-        new ExtractTextPlugin("[name].css")
+        new ExtractTextPlugin("aap.css")
     ] : [
         new webpack.optimize.DedupePlugin(),
         new webpack.optimize.OccurenceOrderPlugin(),
