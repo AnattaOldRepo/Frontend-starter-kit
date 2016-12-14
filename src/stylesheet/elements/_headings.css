@@ -1,6 +1,0 @@
-@import "../settings/index";
-
-:--headings{
-    font-weight: normal;
-    line-height: var(--line-height-base);
-}

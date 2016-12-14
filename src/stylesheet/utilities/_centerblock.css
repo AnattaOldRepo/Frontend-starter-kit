@@ -1,8 +1,0 @@
-/* Importing from postcss-utilities. https://ismamz.github.io/postcss-utilities/docs; */
-
-/* Center block with a width. */
-
-.u-center {
-
-    @util center-block;
-}

@@ -1,8 +1,0 @@
-/* Importing from postcss-utilities. https://ismamz.github.io/postcss-utilities/docs; */
-
-/*Block-level element of an unknown height and width, centered vertically within his parent.*/
-
-.u-absCenter {
-
-    @util center;
-}
