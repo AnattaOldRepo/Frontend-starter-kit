@@ -1,0 +1,19 @@
+{
+  "name": "mozaik-theme-starter",
+  "version": "4.3.0",
+  "authors": [
+    "Mozaik Ltd. <developers@mozaik.com>"
+  ],
+  "description": "A starter-kit for your WordPress themes. Build tools included! :)",
+  "keywords": [
+    "WordPress"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
