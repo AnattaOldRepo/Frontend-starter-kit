@@ -5,6 +5,7 @@ var sourcemaps   = require('gulp-sourcemaps');
 var postcss      = require('gulp-postcss');
 var notify       = require('gulp-notify');
 var browserSync  = require('browser-sync');
+var gulpStylelint = require('gulp-stylelint');
 
 // utils
 var pumped       = require('../../utils/pumped');
@@ -39,6 +40,13 @@ module.exports = function (cb) {
             require("postcss-responsive-font"),
             require('postcss-reporter')
         ]))
+        .pipe(gulpStylelint({
+            reporters:
+            [
+                {formatter: 'string', console: true}
+            ],
+            debug: true
+            }))
 		.pipe(sourcemaps.write('./'))
 		.pipe(gulp.dest(config.paths.dest))
 		.pipe(filterCSS) // sourcemaps adds `.map` files to the gulp

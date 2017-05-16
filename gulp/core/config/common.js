@@ -14,8 +14,8 @@ var overrides = require('../../config/common');
 module.exports = deepMerge({
 	paths: {
 		assets: {
-			src: 'assets',
-			dest: '../' + project.name +  '/assets'
+			src: project.srcDirPath,
+			dest: project.buildDirPath
 		}
 	}
 }, overrides);

@@ -1,5 +1,6 @@
 var gutil = require('gulp-util');
 var path  = require('path');
+var fs = require('fs');
 
 /**
  * Validate the options passed
@@ -10,43 +11,61 @@ var path  = require('path');
 module.exports = function (project) {
 	var validationFailed = false;
 
-
 	/**
 	 * Safely handle missing
 	 * project name or
 	 * project prettyName
 	 */
-	if (!project.name) {
+	if (!project.buildDirName) {
 		validationFailed = true;
 
-		gutil.log('Project Config Error:', gutil.colors.red('The \"name\" option in your project.config.js configuration cannot be empty'));
-	}
-	if (!project.prettyName) {
-		validationFailed = true;
-
-		gutil.log('Project Config Error:', gutil.colors.red('The \"prettyName\" option in your project.config.js configuration cannot be empty'));
+		gutil.log('Project Config Error:', gutil.colors.red('The \"buildDirName\" option in your project.config.js configuration cannot be empty'));
 	}
 
+    if (!project.browserSyncProxy) {
+        validationFailed = true;
+
+        gutil.log('Project Config Error:', gutil.colors.red('The \"browserSyncProxy\" option in your project.config.js configuration cannot be empty'));
+    }
+
+    if (!project.buildDirPath) {
+        validationFailed = true;
+
+        gutil.log('Project Config Error:', gutil.colors.red('The \"buildDirPath\" option in your project.config.js configuration cannot be empty'));
+    }
+
+    if (!project.srcDirPath) {
+        validationFailed = true;
+
+        gutil.log('Project Config Error:', gutil.colors.red('The \"assetsDirPath\" option in your project.config.js configuration cannot be empty'));
+    }
+
+    /**
+     * Src Directory check
+     */
+    if (!fs.existsSync(path.resolve(project.srcDirPath))) {
+        gutil.log('Project Config Error:', gutil.colors.red('Could not find:' + project.srcDirPath + ' make sure it exits in the root directory' ));
+        validationFailed = true;
+    }
 
 	/**
 	 * Safely handle misconfigured
 	 * project name
 	 */
 	var devThemeRoot = path.basename(path.resolve('./'));
-	if (project.name === devThemeRoot) {
+	if (project.buildDirName === devThemeRoot) {
 		validationFailed = true;
 
 		gutil.log('Project Config Error:', gutil.colors.red(
-			'The \"name\" value in your project.config.js configuration \'' + project.name + '\' ' +
+			'The \"buildDirName\" value in your project.config.js configuration \'' + project.buildDirName + '\' ' +
 			'cannot be the same as the directory name of the development theme \'' + devThemeRoot + '\'.'
 		));
 
 		gutil.log(
-			'Please either rename the development theme directory (to \'' + project.name + '_dev\' for example) ' +
-			'or change the name value in your project.config.js to something else.'
+			'Please either rename the development theme directory (to \'' + project.buildDirName + '_dev\' for example) ' +
+			'or change the buildDirName value in your project.config.js to something else.'
 		);
 	}
-
 
 	/**
 	 * Exit the gulp process

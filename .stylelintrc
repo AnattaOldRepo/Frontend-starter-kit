@@ -1,0 +1,20 @@
+{
+    "rules": {
+        "block-no-empty": true,
+        "selector-no-id": true,
+        "declaration-no-important": true,
+        "declaration-colon-space-after": "always",
+        "selector-attribute-operator-space-after": "always",
+        "block-closing-brace-space-after": "always",
+        "function-url-quotes": "always",
+        "indentation": [ 4, {
+            "except": ["block"],
+            "message": "Please use 4 spaces for indentation. Tabs make The Architect grumpy.",
+            "severity": "warning"
+          }],
+        "unit-whitelist": ["em", "rem", "%", "s"],
+        "color-hex-case": [ "lower", {
+            "message": "Lowercase letters are easier to distinguish from numbers"
+        }],
+    }
+}
